@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  boolsim-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: boolsim-mcp
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    volumes:
+      # For development, you can uncomment the following lines to mount the source code
+      # - ./src:/app/src
+      # For logs persistence
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      # Add any environment variables needed for the MCP server
+    networks:
+      - boolsim-network
+    # Important: Make sure the boolSim tar file is in the ./boolSim directory
+    # before building the container
+
+networks:
+  boolsim-network:
+    driver: bridge 

@@ -1,0 +1,26 @@
+# Node.js files
+node_modules
+npm-debug.log
+.npm
+.node_repl_history
+
+# Build artifacts
+*.log
+logs/
+temp/
+build/
+.DS_Store
+
+# Development files
+.git*
+.vscode/
+.idea/
+*.md
+!README.md
+
+# Container directories
+Containers_mcp-servers/
+Containers_ai-mcp-bio/
+
+# Test files
+test-*.js 

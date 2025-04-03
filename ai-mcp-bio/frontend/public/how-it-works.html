@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - AI-MCP-Bio Platform</title>
+    <style>
+        :root {
+            --primary-color: #4285f4; /* Cursor blue */
+            --secondary-color: #f52f7a; /* Pinkish accent */
+            --tertiary-color: #28c941; /* Green accent */
+            --bg-color: #111111; /* Dark background */
+            --card-bg: #1e1e1e; /* Slightly lighter background for cards */
+            --text-color: #f0f0f0; /* Light text */
+            --text-secondary: #a0a0a0; /* Secondary text */
+            --border-color: #333333; /* Border color */
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step-section {
+            margin-bottom: 5rem;
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            width: 5rem;
+            height: 5rem;
+            background-color: rgba(66, 133, 244, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .step-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-color);
+        }
+        
+        .step-section p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-section ul, .step-section ol {
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+        }
+        
+        .step-section li {
+            margin-bottom: 1rem;
+        }
+        
+        .code-block {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        .copy-button {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .copy-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .note {
+            background-color: rgba(66, 133, 244, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .note p {
+            margin-bottom: 0;
+        }
+        
+        .callout {
+            background-color: rgba(245, 47, 122, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .callout p {
+            margin-bottom: 0;
+        }
+        
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .caption {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .next-steps {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .button:hover {
+            background-color: #3b78e7;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">AI-MCP-Bio Platform</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#mcp-servers">MCP Servers</a>
+            <a href="index.html#how-it-works">How It Works</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>How It Works - Detailed Guide</h1>
+            <p>Follow these three steps to connect your AI assistant to our powerful bioinformatics tools</p>
+        </div>
+
+        <div class="step-section">
+            <div class="step-number">STEP 1</div>
+            <div class="step-icon">🔗</div>
+            <h2>Generate Your Personal MCP Endpoint</h2>
+            <p>
+                Your MCP endpoint is the secure connection point that allows your AI assistant to access AI-MCP-Bio's vast Bioinformatic resources. Think of it as a secure API key that grants your AI controlled access to specialized tools.
+            </p>
+            
+            <h3>Getting Your MCP URL</h3>
+            <p>
+                To generate your personal MCP endpoint:
+            </p>
+            <ol>
+                <li>Log in to your AI-MCP-Bio account</li>
+                <li>Navigate to the <strong>MCP Settings</strong> page</li>
+                <li>Click on <strong>Generate New Endpoint</strong></li>
+                <li>Copy your unique MCP server URL</li>
+            </ol>
+            
+            <div class="callout">
+                <p><strong>Caution:</strong> Treat your MCP server URL like a password! It can be used to run your AI-MCP-Bio tools and access your data.</p>
+            </div>
+            
+            <h3>Configuring Cursor IDE</h3>
+            <p>
+                For Cursor version ≥ 0.46 (recommended):
+            </p>
+            <ol>
+                <li>Open Cursor settings (⇧+⌘+J)</li>
+                <li>Navigate to the "MCP" tab and click "Add MCP Server"</li>
+                <li>Add the following JSON configuration, replacing the placeholder URL with your MCP URL from AI-MCP-Bio:</li>
+            </ol>
+            
+            <div class="code-block">
+                <pre>{
+  "mcpServers": {
+    "AI-MCP-Bio": {
+      "url": "https://mcp.ai-mcp-bio.org/endpoint/YOUR_MCP_KEY/sse"
+    }
+  }
+}</pre>
+                <button class="copy-button">Copy to clipboard</button>
+            </div>
+            
+            <div class="note">
+                <p><strong>Note:</strong> Replace YOUR_MCP_KEY with your actual MCP key from the settings page.</p>
+            </div>
+            
+            <h3>For Older Cursor Versions</h3>
+            <p>
+                In older versions of Cursor (< 0.46), you can set up AI-MCP-Bio by:
+            </p>
+            <ol>
+                <li>Going to Settings > MCP</li>
+                <li>Directly pasting your full MCP URL in the input field</li>
+                <li>Clicking "Save" to complete the setup</li>
+            </ol>
+        </div>
+
+        <div class="step-section">
+            <div class="step-number">STEP 2</div>
+            <div class="step-icon">⚙️</div>
+            <h2>Configure Your AI Assistant Capabilities</h2>
+            <p>
+                After generating your MCP endpoint, you need to configure which bioinformatics tools and resources your AI assistant can access. This gives you precise control over your AI's capabilities.
+            </p>
+            
+            <h3>Available Tool Categories</h3>
+            <p>
+                AI-MCP-Bio offers a wide range of specialized bioinformatics tools:
+            </p>
+            <ul>
+                <li>
+                    <strong>Genomic Analysis Tools</strong>
+                    <ul>
+                        <li>BLAST - Search DNA and protein databases</li>
+                        <li>BWA - Map DNA sequences against reference genomes</li>
+                        <li>GATK - Variant discovery in high-throughput sequencing data</li>
+                        <li>Samtools - Manipulate alignments in SAM/BAM format</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Structural Biology Tools</strong>
+                    <ul>
+                        <li>AlphaFold - Protein structure prediction</li>
+                        <li>PyMOL - Molecular visualization</li>
+                        <li>Docking tools - Predict ligand binding</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Pathway and Systems Biology</strong>
+                    <ul>
+                        <li>KEGG - Pathway mapping</li>
+                        <li>Reactome - Pathway analysis</li>
+                        <li>Gene Ontology tools - Functional annotation</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Database Access</strong>
+                    <ul>
+                        <li>GenBank - Genetic sequence database</li>
+                        <li>UniProt - Protein sequence and function</li>
+                        <li>PDB - Protein structure database</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Configuring Tool Access</h3>
+            <p>
+                To configure which tools your AI can access:
+            </p>
+            <ol>
+                <li>Navigate to your AI-MCP-Bio dashboard</li>
+                <li>Go to the "Configure Tools" section</li>
+                <li>Enable or disable specific tools based on your research needs</li>
+                <li>Set access levels and permissions for each tool</li>
+                <li>Save your configuration</li>
+            </ol>
+            
+            <div class="note">
+                <p><strong>Pro Tip:</strong> Start with just the essential tools you need for your current research. You can always add more tools later as your needs expand.</p>
+            </div>
+            
+            <h3>Setting Usage Limits</h3>
+            <p>
+                For better resource management and cost control, you can set usage limits:
+            </p>
+            <ul>
+                <li>API call limits per day/week/month</li>
+                <li>Computation time allowances</li>
+                <li>Storage quotas for results</li>
+                <li>Maximum parallel jobs</li>
+            </ul>
+        </div>
+
+        <div class="step-section">
+            <div class="step-number">STEP 3</div>
+            <div class="step-icon">🤖</div>
+            <h2>Connect Your AI Assistant</h2>
+            <p>
+                With your MCP endpoint generated and tools configured, the final step is connecting your AI assistant to use these powerful capabilities.
+            </p>
+            
+            <h3>Compatible AI Assistants</h3>
+            <p>
+                AI-MCP-Bio currently works with several AI systems:
+            </p>
+            <ul>
+                <li><strong>Cursor IDE</strong> - Integrated development environment with AI coding capabilities</li>
+                <li><strong>Claude by Anthropic</strong> - Via Claude Desktop application</li>
+                <li><strong>Custom LLM Applications</strong> - Through our API</li>
+            </ul>
+            
+            <h3>Using with Cursor IDE</h3>
+            <p>
+                Once you've configured your MCP server in Cursor settings (as described in Step 1), you can immediately start using AI-MCP-Bio capabilities:
+            </p>
+            <ol>
+                <li>Open any project in Cursor</li>
+                <li>Open the AI chat panel (Ctrl+J or Cmd+J)</li>
+                <li>Ask your AI to perform bioinformatics tasks like:
+                    <ul>
+                        <li>"Analyze this FASTA sequence using BLAST"</li>
+                        <li>"Run a variant calling pipeline on this genome data"</li>
+                        <li>"Compare these protein structures and highlight the binding sites"</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="code-block">
+                <pre>// Example conversation in Cursor
+
+You: Can you help me analyze this FASTA sequence and identify any known mutations?
+
+AI: I'd be happy to analyze this sequence for mutations. I'll use the BLAST tool 
+through the MCP connection to identify the sequence and check for variants.
+
+[AI is requesting to use the BLAST MCP tool]
+
+You: [Approve tool use]
+
+AI: I've analyzed your sequence. It's a variant of the TP53 tumor suppressor gene. 
+I found 3 notable mutations:
+1. R175H - Known pathogenic mutation often found in various cancers
+2. G245S - Less common variant with moderate impact on protein function
+3. R282W - Affects DNA binding capability of the p53 protein
+
+Would you like me to run additional analyses on these mutations?</pre>
+            </div>
+            
+            <h3>Tool Permissions</h3>
+            <p>
+                When your AI assistant attempts to use a bioinformatics tool, you'll receive a permission prompt. You can:
+            </p>
+            <ul>
+                <li><strong>Approve</strong> - Allow the tool to be used for this request</li>
+                <li><strong>Deny</strong> - Prevent the tool from being used</li>
+                <li><strong>Always approve</strong> - Enable automatic usage of this tool in the future</li>
+            </ul>
+            
+            <div class="note">
+                <p><strong>Note:</strong> For sensitive research data, we recommend reviewing each tool request before approval to maintain data security.</p>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Ready to Get Started?</h3>
+            <p>Follow these three steps to transform how you interact with bioinformatics tools through AI</p>
+            <a href="index.html#how-it-works" class="button">Generate Your MCP Endpoint</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AI-MCP-Bio: Model Context Protocol Platform for Advanced Bioinformatics. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple script to make copy buttons work
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const codeBlock = button.previousElementSibling;
+                const textToCopy = codeBlock.textContent;
+                
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.style.backgroundColor = 'var(--tertiary-color)';
+                    button.style.color = 'white';
+                    button.style.borderColor = 'var(--tertiary-color)';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.backgroundColor = '';
+                        button.style.color = '';
+                        button.style.borderColor = '';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
