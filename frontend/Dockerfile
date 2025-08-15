@@ -1,0 +1,1 @@
+FROM nginx:alpinenn# Copy nginx configurationnCOPY nginx.conf /etc/nginx/nginx.confnn# Copy static filesnCOPY . /usr/share/nginx/htmlnn# Expose portnEXPOSE 8080nn# Health checknHEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \n  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1nnCMD ["nginx", "-g", "daemon off;"]
