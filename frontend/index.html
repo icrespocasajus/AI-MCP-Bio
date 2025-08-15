@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-MCP-Bio Platform | Bridging AI and Bioinformatics</title>
+    <meta name="description" content="Next-generation scientific computing platform that bridges artificial intelligence with specialized bioinformatics tools through a secure Model Context Protocol framework.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav" style="gap:16px;">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span>AI-MCP-Bio</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#" id="homeNav">Home</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#capabilities">Platform</a>
+                    <a href="#security">Security</a>
+                    <a href="#mcp-servers">MCP Servers</a>
+                    <a href="#contact">Contact</a>
+                    <!-- Global MCP Cart (top-right) -->
+                    <div id="globalCart" title="Cart" style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#e5e7eb;cursor:default;">
+                        <div style="position:relative;">
+                            <i class="fas fa-shopping-cart" style="font-size:24px;color:#e5e7eb;"></i>
+                            <span id="globalCartBadge" style="position:absolute;top:-6px;right:-10px;background:#ef4444;color:white;border-radius:999px;padding:2px 6px;font-size:10px;min-width:16px;text-align:center;">
+                                <span id="globalCartCount">0</span>
+                            </span>
+                        </div>
+                        <a href="#" id="globalEmptyCart" style="font-size:12px;color:#93c5fd;text-decoration:underline;">Empty</a>
+                    </div>
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="btn btn-auth" id="loginBtn">Login</button>
+                        <button class="btn btn-primary" id="registerBtn">Register</button>
+                    </div>
+                    <div class="user-menu" id="userMenu" style="display: none;">
+                        <span class="user-email" id="userEmail" style="cursor:pointer;" title="Open Profile"></span>
+                        <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h1 class="hero-title">Connect Your AI to Bioinformatics Tools</h1>
+                    <p class="hero-description">The fastest way to let your AI assistant interact with specialized bioinformatics tools, databases, and computational workflows through a standardized interface. No complex API integrations required.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="heroGetStarted">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Benefits Section -->
+            <section id="benefits" class="benefits">
+                <div class="section-header">
+                    <h2>Key Benefits</h2>
+                    <p>Traditional AI assistants are limited to generating text and code. AI-MCP-Bio breaks this barrier by providing direct access to bioinformatics tools and databases.</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Integration</h3>
+                        <p>Connect your favorite AI assistant directly to specialized bioinformatics tools</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>Standardized Interface</h3>
+                        <p>Uniform API across diverse bioinformatics resources</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Access</h3>
+                        <p>Role-based authentication and permission controls</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3>Scalable Architecture</h3>
+                        <p>From personal research to enterprise-level deployments</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Platform Capabilities Section -->
+            <section id="capabilities" class="capabilities">
+                <div class="section-header">
+                    <h2>AI-MCP-Bio Platform</h2>
+                    <p>Next-generation scientific computing platform that bridges artificial intelligence with specialized bioinformatics tools through a secure Model Context Protocol framework.</p>
+                </div>
+                <div class="section-header" style="margin-top:2rem;">
+                    <h2>Platform Capabilities</h2>
+                    <p>Unlock the full potential of AI-driven bioinformatics research with our comprehensive suite of tools and integrations.</p>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-card large">
+                        <div class="capability-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Real-time Data Access</h3>
+                        <p>Direct connection to bioinformatics databases and resources</p>
+                    </div>
+                    <div class="capability-card large">
+                        <div class="capability-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Computational Workflows</h3>
+                        <p>Execute complex analyses through standardized protocols</p>
+                    </div>
+                    <div class="capability-card highlight">
+                        <div class="capability-badge">
+                            <span>Preview</span>
+                        </div>
+                        <div class="capability-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Scientific Computing</h3>
+                        <p>Advanced bioinformatics tools at your fingertips</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Leverage AI for sophisticated biological data interpretation</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="security" class="security">
+                <div class="security-content">
+                    <div class="security-text">
+                        <h2><span class="security-highlight">Enterprise-Grade</span> Security</h2>
+                        <p>Built with security at its core, AI-MCP-Bio ensures your sensitive research data remains protected while enabling powerful AI-driven analysis capabilities.</p>
+                        <div class="security-features">
+                            <div class="security-feature">
+                                <i class="fas fa-lock"></i>
+                                <span>End-to-end encryption</span>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Role-based access control</span>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-certificate"></i>
+                                <span>Compliance ready</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="security-visual">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <span class="chart-title">Security Metrics</span>
+                                <span class="chart-date">30 Jun</span>
+                            </div>
+                            <div class="chart-content">
+                                <div class="chart-line"></div>
+                                <div class="chart-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Page visits</span>
+                                        <span class="stat-value">4,212</span>
+                                    </div>
+                                </div>
+                                <div class="chart-graph">
+                                    <svg viewBox="0 0 300 120" class="line-chart">
+                                        <polyline points="0,100 50,80 100,60 150,40 200,50 250,30 300,20" 
+                                                stroke="#4F46E5" stroke-width="3" fill="none"/>
+                                        <circle cx="100" cy="60" r="4" fill="#4F46E5"/>
+                                        <circle cx="200" cy="50" r="4" fill="#4F46E5"/>
+                                    </svg>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color blue"></div>
+                                        <span>Secure Sessions</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color green"></div>
+                                        <span>Authenticated Requests</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MCP Servers Section -->
+            <section id="mcp-servers" class="capabilities">
+                <div class="section-header">
+                    <h2>MCP Servers</h2>
+                    <p>Select, configure, and activate your Model Context Protocol servers to power bioinformatics workflows.</p>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-card" id="serverCatalogCard" style="cursor:pointer;">
+                        <div class="capability-icon"><i class="fas fa-server"></i></div>
+                        <h3>MCP Server Catalog</h3>
+                        <p>Browse available servers for articles, variants, trials, OpenFDA, and more.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon"><i class="fas fa-toggle-on"></i></div>
+                        <h3>Profiles & Activation</h3>
+                        <p>Create profiles of selected servers and activate them in your client.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon"><i class="fas fa-key"></i></div>
+                        <h3>Secure Access</h3>
+                        <p>Use personal access tokens to securely authenticate with each server.</p>
+                    </div>
+                    <div class="capability-card">
+                        <div class="capability-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Client Config</h3>
+                        <p>Generate your <code>mcp.json</code> for IDEs and assistants directly from selected servers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Server Catalog Modal -->
+            <div id="serverCatalogModal" class="catalog-modal" style="display:none;">
+                <div class="catalog-modal-content">
+                    <div class="catalog-header">
+                        <h2 style="display:flex;align-items:center;gap:10px;">MCP Servers 
+                          <span id="catalogCart" title="Cart" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;background:#1f1443;border:1px solid rgba(255,255,255,0.15);padding:4px 8px;border-radius:16px;color:#e5e7eb;cursor:default;">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="catalogCartCount">0</span>
+                          </span>
+                          <span id="catalogProfile" title="Active Profile" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;background:#1f1443;border:1px solid rgba(255,255,255,0.15);padding:4px 8px;border-radius:16px;color:#e5e7eb;cursor:default;">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="catalogProfileCount">0</span>
+                          </span>
+                        </h2>
+                        <button class="catalog-close" id="catalogClose">&times;</button>
+                    </div>
+                    <div class="catalog-actions">
+                        <div class="search-container">
+                            <input id="catalogSearch" type="text" placeholder="Search servers..." />
+                        </div>
+                        <div class="catalog-tabs">
+                            <button class="catalog-tab active" data-category="all">All</button>
+                            <button class="catalog-tab" data-category="popular">Popular</button>
+                            <button class="catalog-tab" data-category="genomics">Genomics</button>
+                            <button class="catalog-tab" data-category="proteomics">Proteomics</button>
+                            <button class="catalog-tab" data-category="phylogenetics">Phylogenetics</button>
+                            <button class="catalog-tab" data-category="utilities">Utilities</button>
+                            <button class="catalog-tab" data-category="cart">My Cart</button>
+                            <button class="catalog-tab" data-category="profile">My Profile</button>
+                        </div>
+                    </div>
+                    <div class="catalog-content" id="catalogContent">
+                        <!-- Server cards will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Section -->
+            <section class="cta">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Research?</h2>
+                    <div class="cta-badge">
+                        <span>Preview</span>
+                    </div>
+                    <p>Join the next generation of scientific computing. Experience the power of AI-driven bioinformatics today.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary large" id="ctaStartTrial">
+                            Start Free Trial <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary large">
+                            Schedule Demo
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <p class="footer-tagline">AI-MCP-Bio Platform - Bridging AI and Bioinformatics</p>
+                <p class="footer-copyright">© 2025 AI-MCP-Bio. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Authentication Modals -->
+    <div id="authModal" class="auth-modal" style="display: none;">
+        <div class="auth-modal-content">
+            <div class="auth-modal-header">
+                <h3 id="authModalTitle">Login</h3>
+                <button class="auth-modal-close" id="authModalClose">&times;</button>
+            </div>
+            <div class="auth-modal-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="password-requirements" id="passwordRequirements" style="display: none;">
+                            <small>Password must be at least 8 characters with uppercase, lowercase, and number</small>
+                        </div>
+                    </div>
+                    <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" id="authSubmit">
+                        <span id="authSubmitText">Login</span>
+                        <div class="loading-spinner" id="authSpinner" style="display: none;"></div>
+                    </button>
+                </form>
+                <div class="auth-switch">
+                    <p id="authSwitchText">Don't have an account? <a href="#" id="authSwitchLink">Register here</a></p>
+                </div>
+                <div class="auth-error" id="authError" style="display: none;"></div>
+                <div class="auth-success" id="authSuccess" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Panel Modal -->
+    <div id="profileModal" class="auth-modal" style="display: none;">
+        <div class="auth-modal-content" style="max-width: 1280px;">
+            <div class="auth-modal-header">
+                <h3>Profile</h3>
+                <button class="auth-modal-close" id="profileModalClose">&times;</button>
+            </div>
+            <div class="auth-modal-body">
+                <!-- Tabs header -->
+                <div style="display:flex;gap:8px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.15);">
+                    <button class="btn btn-secondary" id="tabBtnCredentials">Credentials</button>
+                    <button class="btn btn-secondary" id="tabBtnMCP">MCP Servers</button>
+                    <button class="btn btn-secondary" id="tabBtnClient">MCP Client (mcp.json)</button>
+                </div>
+
+                <!-- Tab: Credentials -->
+                <div id="tabCredentials" style="display:block;">
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                        <div style="flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px;background:#2a1f5f;">
+                            <h4 style="margin:4px 0 8px;color:white;">Change Password</h4>
+                            <div style="color:#cbd5e1;margin-bottom:8px;">User: <span id="profileUserEmail">-</span></div>
+                            <form id="changePasswordForm" style="display:flex;flex-direction:column;gap:8px;">
+                                <div style="position:relative;">
+                                    <input type="password" id="newPassword" placeholder="New password" required style="padding-right:36px;">
+                                    <button type="button" id="toggleNewPassword" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:#e5e7eb;cursor:pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div style="position:relative;">
+                                    <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required style="padding-right:36px;">
+                                    <button type="button" id="toggleConfirmPassword" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:#e5e7eb;cursor:pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Update Password</button>
+                            </form>
+                        </div>
+                        <div style="flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px;background:#2a1f5f;">
+                            <h4 style="margin:4px 0 8px;color:white;">Personal Access Tokens</h4>
+                            <div style="display:flex;gap:8px;margin-bottom:8px;">
+                                <input type="text" id="newTokenName" placeholder="Token name (optional)" style="flex:1;">
+                                <button class="btn btn-auth" id="generateTokenBtn">Generate</button>
+                            </div>
+                            <small style="color:#cbd5e1;display:block;margin-bottom:8px;">Copy the token right after generation. It won't be shown again.</small>
+                            <div id="tokensList" style="max-height:180px;overflow:auto;border-top:1px solid rgba(255,255,255,0.15);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: MCP Servers -->
+                <div id="tabMCP" style="display:none;">
+                    <div style="flex:1 1 100%;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px;background:#2a1f5f;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+                            <h4 style="margin:4px 0 8px;color:white;">MCP Selection Profiles</h4>
+                            <div style="display:flex;gap:8px;align-items:center;">
+                                <select id="profilesDropdown" style="min-width:260px;"></select>
+                            </div>
+                        </div>
+                        <small style="color:#cbd5e1;display:block;margin-bottom:8px;">You can have up to 10 profiles. Each profile can include up to 5 servers.</small>
+                        <div id="mcpColumns" style="display:grid;grid-template-columns: 1fr 48px 1fr 48px 1fr;gap:16px;align-items:stretch;">
+                            <!-- Column: Available MCP Servers -->
+                            <div>
+                                <h5 style="color:#e5e7eb;margin:6px 0;">Available MCP Servers</h5>
+                                <div id="availableServers" style="border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px;height:340px;overflow:auto;"></div>
+                            </div>
+                            <!-- Arrows: Available <-> Cart -->
+                            <div style="display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;">
+                                <button class="btn btn-auth" id="addToCartBtn" title="Move to Cart" style="padding:4px 8px;min-width:0;">&gt;&gt;</button>
+                                <button class="btn btn-secondary" id="removeFromCartBtn" title="Move back" style="padding:4px 8px;min-width:0;">&lt;&lt;</button>
+                            </div>
+                            <!-- Column: My Cart -->
+                            <div>
+                                <h5 style="color:#e5e7eb;margin:6px 0;">My Cart</h5>
+                                <div id="cartServers" style="border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px;height:340px;overflow:auto;"></div>
+                                <div style="margin-top:8px;display:flex;gap:8px;align-items:center;justify-content:flex-end;">
+                                    <a href="#" id="emptyCartBtn" style="color:#93c5fd;text-decoration:underline;">Empty Cart</a>
+                                </div>
+                            </div>
+                            <!-- Arrows: Cart <-> Selected -->
+                            <div style="display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;">
+                                <button class="btn btn-auth" id="cartToSelectedBtn" title="Move to Selected" style="padding:4px 8px;min-width:0;">&gt;&gt;</button>
+                                <button class="btn btn-secondary" id="selectedToCartBtn" title="Move back" style="padding:4px 8px;min-width:0;">&lt;&lt;</button>
+                            </div>
+                            <!-- Column: Selected MCP Servers -->
+                            <div>
+                                <h5 style="color:#e5e7eb;margin:6px 0;">MCP Servers in my Profile</h5>
+                                <div id="selectedServers" style="border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px;height:340px;overflow:auto;"></div>
+                                <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;">
+                                    <button class="btn btn-primary" id="saveProfileBtn">Save</button>
+                                    <button class="btn btn-secondary" id="activateProfileBtn">Activate</button>
+                                    <button class="btn btn-secondary" id="deleteProfileBtn">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: MCP Client (mcp.json) -->
+                <div id="tabClient" style="display:none;">
+                    <div style="border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px;background:#2a1f5f;">
+                        <h4 style="margin:4px 0 12px;color:white;">MCP Client Configuration (mcp.json)</h4>
+                        <p style="color:#cbd5e1;margin: 0 0 10px;">Select a profile, enter server URLs and paste your token. Then generate your <code>mcp.json</code>.</p>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
+                            <div>
+                                <label style="display:block;color:#e5e7eb;margin-bottom:4px;">Profile</label>
+                                <select id="clientProfileDropdown" style="min-width:240px;"></select>
+                            </div>
+                            <div>
+                                <label style="display:block;color:#e5e7eb;margin-bottom:4px;">Token (paste manually)</label>
+                                <input id="clientTokenInput" type="text" placeholder="paste your token" style="min-width:260px;">
+                            </div>
+                            <button class="btn btn-auth" id="generateMcpJsonBtn">Generate JSON</button>
+                            <button class="btn btn-secondary" id="copyMcpJsonBtn">Copy</button>
+                        </div>
+                        <div id="clientServersConfig" style="margin-top:10px;padding:8px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;"></div>
+                        <textarea id="mcpJsonOutput" style="width:100%;height:200px;margin-top:10px;border-radius:8px;background:#1f1443;color:#e5e7eb;padding:10px;border:1px solid rgba(255,255,255,0.2);" placeholder="Generated mcp.json will appear here..."></textarea>
+                        <small style="color:#cbd5e1;display:block;margin-top:6px;">Save this as <code>mcp.json</code> in your MCP client configuration directory.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Lightweight admin dashboard launcher for admins
+      document.addEventListener('DOMContentLoaded', () => {
+        // Add a hidden Admin link visible only to admins, placed to the left of the user avatar
+        const userMenu = document.getElementById('userMenu');
+        const adminLink = document.createElement('a');
+        adminLink.href = '#';
+        adminLink.id = 'adminDashboardLink';
+        adminLink.textContent = 'Admin';
+        adminLink.style.display = 'none';
+        adminLink.style.marginRight = '0.5rem';
+        adminLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.authManager && window.authManager.openAdminDashboard && window.authManager.openAdminDashboard();
+        });
+        // Insert before the user avatar (email initials)
+        const userEmail = document.getElementById('userEmail');
+        if (userMenu && userEmail) {
+          userEmail.insertAdjacentElement('beforebegin', adminLink);
+        } else if (userMenu) {
+          userMenu.prepend(adminLink);
+        }
+      });
+    </script>
+</body>
+</html>
